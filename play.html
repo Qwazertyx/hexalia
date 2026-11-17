@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://0.peerjs.com wss://0.peerjs.com; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<title>Hexalia · Manette</title>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" integrity="sha384-nlUQ8ZqCbvStErob+biJNzSgltf6urV3VGqhfIfzhmg9RXmpeRm76ELw0pYnKlTR" crossorigin="anonymous"></script>
+<script src="game.js" defer></script>
+<script src="play.js" defer></script>
+</head>
+<body>
+<div class="phone">
+  <h1 class="title">Hexalia</h1>
+  <p class="err" id="fatal"></p>
+  <form id="join" class="panel">
+    <label for="name">Ton prénom</label>
+    <input id="name" maxlength="16" autocomplete="off" required>
+    <p><button class="primary full">Rejoindre</button></p>
+  </form>
+  <div id="game" hidden>
+    <div class="player"><span class="dot" id="me-dot"></span><b id="me-name"></b><span class="muted push" id="me-vp"></span></div>
+    <div class="status" id="status" aria-live="polite"></div>
+    <svg class="board" id="board" role="img" aria-label="Plateau de jeu"></svg>
+    <div class="err" id="err" aria-live="assertive"></div>
+    <div class="hand" id="hand"></div>
+    <div id="panel"></div>
+  </div>
+</div>
+</body>
+</html>

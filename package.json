@@ -1,0 +1,10 @@
+{
+  "name": "hexalia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jeu de plateau en navigateur, piloté par les téléphones (QR code + WebRTC).",
+  "scripts": {
+    "start": "node serve.js",
+    "test": "node test.js"
+  }
+}

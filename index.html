@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://0.peerjs.com wss://0.peerjs.com; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<title>Hexalia</title>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" integrity="sha384-nlUQ8ZqCbvStErob+biJNzSgltf6urV3VGqhfIfzhmg9RXmpeRm76ELw0pYnKlTR" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU" crossorigin="anonymous"></script>
+<script src="game.js" defer></script>
+<script src="host.js" defer></script>
+</head>
+<body>
+<div class="host">
+  <svg class="board" id="board" role="img" aria-label="Plateau de jeu"></svg>
+  <aside>
+    <h1 class="title">Hexalia</h1>
+    <div id="lobby" class="panel">
+      <div>Scanne pour rejoindre · salle <b id="code">…</b></div>
+      <div id="qr"></div>
+      <small class="muted" id="url"></small>
+      <p class="err" id="lan" hidden>Ouvre cette page via l'adresse IP du PC (ex. http://192.168.x.x:8000), sinon les téléphones ne pourront pas ouvrir le lien.</p>
+      <button class="primary full" id="start">Commencer</button>
+      <h2>Forme du plateau <small class="muted">· la carte est tirée au hasard au lancement</small></h2>
+      <div class="shapes" id="shapes"></div>
+    </div>
+    <div class="panel" id="players"></div>
+    <div class="panel dice" id="dice" hidden></div>
+    <div class="panel" id="trade" hidden></div>
+    <div class="panel"><ol class="log" id="log"></ol></div>
+    <button id="finish" hidden>Arrêter la partie (meilleur score gagne)</button>
+    <button id="newgame" hidden>Nouvelle partie</button>
+  </aside>
+</div>
+</body>
+</html>
